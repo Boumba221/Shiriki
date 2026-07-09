@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-white text-ink;
+    font-feature-settings: "cv11", "ss01";
+  }
+
+  ::selection {
+    background: rgba(35, 131, 226, 0.18);
+  }
+}
+
+@layer components {
+  /* Notion-style solid button */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-ink px-4 py-2 text-sm font-medium text-white
+      transition-all duration-150 hover:bg-black active:scale-[0.98];
+  }
+
+  /* Notion-style ghost button */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-ink
+      transition-colors duration-150 hover:bg-[rgba(55,53,47,0.06)];
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-line bg-white px-4 py-2 text-sm
+      font-medium text-ink transition-all duration-150 hover:bg-cream active:scale-[0.98];
+  }
+
+  /* A Notion "block" card */
+  .block-card {
+    @apply rounded-xl border border-line bg-white p-6 transition-all duration-200 hover:shadow-card;
+  }
+}
+
+/* Subtle dotted grid used behind the hero, like a Notion canvas */
+.canvas-dots {
+  background-image: radial-gradient(rgba(55, 53, 47, 0.08) 1px, transparent 1px);
+  background-size: 22px 22px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 40%, transparent 100%);
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 40%, transparent 100%);
+}
