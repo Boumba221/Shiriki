@@ -3,6 +3,30 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --page: 255 255 255;
+    --surface: 255 255 255;
+    --cream: 247 246 243;
+    --cream-soft: 251 251 250;
+    --ink: 55 53 47;
+    --ink-light: 115 114 110;
+    --ink-faint: 155 154 151;
+    --line: rgba(55, 53, 47, 0.09);
+    --dot: rgba(55, 53, 47, 0.08);
+  }
+
+  .dark {
+    --page: 25 25 25;
+    --surface: 37 37 37;
+    --cream: 32 32 32;
+    --cream-soft: 29 29 29;
+    --ink: 233 233 231;
+    --ink-light: 166 162 155;
+    --ink-faint: 120 118 113;
+    --line: rgba(255, 255, 255, 0.11);
+    --dot: rgba(255, 255, 255, 0.07);
+  }
+
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
@@ -11,42 +35,45 @@
   }
 
   body {
-    @apply bg-white text-ink;
+    @apply bg-page text-ink;
     font-feature-settings: "cv11", "ss01";
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
   }
 
   ::selection {
-    background: rgba(35, 131, 226, 0.18);
+    background: rgba(35, 131, 226, 0.22);
   }
 }
 
 @layer components {
   /* Notion-style solid button */
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-ink px-4 py-2 text-sm font-medium text-white
-      transition-all duration-150 hover:bg-black active:scale-[0.98];
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-ink px-4 py-2 text-sm font-medium text-page
+      transition-all duration-150 hover:opacity-90 active:scale-[0.98];
   }
 
   /* Notion-style ghost button */
   .btn-ghost {
     @apply inline-flex items-center justify-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-ink
-      transition-colors duration-150 hover:bg-[rgba(55,53,47,0.06)];
+      transition-colors duration-150 hover:bg-ink/[0.06];
   }
 
   .btn-outline {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-line bg-white px-4 py-2 text-sm
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-line bg-surface px-4 py-2 text-sm
       font-medium text-ink transition-all duration-150 hover:bg-cream active:scale-[0.98];
   }
 
   /* A Notion "block" card */
   .block-card {
-    @apply rounded-xl border border-line bg-white p-6 transition-all duration-200 hover:shadow-card;
+    @apply rounded-xl border border-line bg-surface p-6 transition-all duration-200 hover:shadow-card;
   }
 }
 
 /* Subtle dotted grid used behind the hero, like a Notion canvas */
 .canvas-dots {
-  background-image: radial-gradient(rgba(55, 53, 47, 0.08) 1px, transparent 1px);
+  background-image: radial-gradient(var(--dot) 1px, transparent 1px);
   background-size: 22px 22px;
   -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 40%, transparent 100%);
   mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 40%, transparent 100%);

@@ -2,8 +2,8 @@ import { ArrowRight } from "./icons";
 
 export default function CTA() {
   return (
-    <section id="cta" className="mx-auto max-w-content px-5 pb-24 md:px-8">
-      <div className="relative overflow-hidden rounded-3xl bg-ink px-6 py-16 text-center md:px-12 md:py-24">
+    <section id="cta" className="mx-auto max-w-content px-5 pb-16 md:px-8">
+      <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#1c1c1c] px-6 py-16 text-center md:px-12 md:py-24">
         {/* soft glow */}
         <div
           aria-hidden
@@ -27,9 +27,9 @@ export default function CTA() {
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
               href="#"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 text-[15px] font-semibold text-ink transition-transform duration-150 hover:bg-white/90 active:scale-[0.98]"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 text-[15px] font-semibold text-[#1c1c1c] transition-transform duration-150 hover:bg-white/90 active:scale-[0.98]"
             >
-              Get Shiriki free
+              Get $SHIRI free
               <ArrowRight width={16} height={16} />
             </a>
             <a

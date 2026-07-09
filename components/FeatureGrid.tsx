@@ -1,5 +1,5 @@
 import type { ComponentType, SVGProps } from "react";
-import { Bolt, Database, Doc, Globe, Lock, Sparkles, Tasks, Users } from "./icons";
+import { Bolt, Check, Database, Shield, Sparkles, Users } from "./icons";
 
 type Card = {
   icon: ComponentType<SVGProps<SVGSVGElement>>;
@@ -10,69 +10,65 @@ type Card = {
 
 const cards: Card[] = [
   {
-    icon: Doc,
-    title: "Flexible docs",
-    body: "Pages that hold anything — text, tables, media, and embeds.",
+    icon: Shield,
+    title: "100% VC-Proof",
+    body: "Tired of predatory funds dumping on retail investors hours after launch? With 65% of the total supply locked for the community, the playing field is finally leveled. No one can manipulate the market or pull the rug from underneath the tribe. Your early support is fully protected.",
     color: "text-notion-blue bg-notion-blue/10",
   },
   {
-    icon: Database,
-    title: "Powerful databases",
-    body: "Turn any list into a filterable, sortable, connected database.",
-    color: "text-notion-purple bg-notion-purple/10",
-  },
-  {
-    icon: Tasks,
-    title: "Project views",
-    body: "Board, table, timeline, calendar — switch instantly, same data.",
+    icon: Bolt,
+    title: "Proof-of-Engagement",
+    body: "Every time you back the tribe, the protocol backs you. Spreading the word, driving engagement, and helping new members automatically generates structural rewards in $SHIRI. The more value you bring to the collective, the stronger your position becomes.",
     color: "text-notion-orange bg-notion-orange/10",
   },
   {
+    icon: Database,
+    title: "The Scarcity Flywheel",
+    body: "Distributing the majority of tokens to the public does not mean flooding the market. The distribution mechanics are engineered to tighten token emission and increase scarcity dynamically as the network grows. Your early allocation gains native structural importance over time.",
+    color: "text-notion-purple bg-notion-purple/10",
+  },
+  {
     icon: Users,
-    title: "Real-time co-editing",
-    body: "See presence, cursors, and comments update live as you work.",
+    title: "Collective Governance",
+    body: "There are no hidden boards of directors or shady foundations making decisions behind closed doors. Holding $SHIRI gives you direct voting power over the network's future. You steer the utility, validate the next milestones, and dictate resource allocation. This is your tribe.",
     color: "text-notion-green bg-notion-green/10",
   },
   {
     icon: Sparkles,
-    title: "Templates gallery",
-    body: "Start in seconds with templates for wikis, roadmaps, and notes.",
+    title: "No Bots. Just Brains",
+    body: "To ensure the 65% supply goes strictly to real community members, Shiriki deploys a ruthless sybil-defense engine at entry. We don't fund automated server farms; we reward human hearts. Your effort creates the value.",
     color: "text-notion-pink bg-notion-pink/10",
   },
   {
-    icon: Bolt,
-    title: "Blazing fast",
-    body: "Keyboard-first, offline-ready, and quick from the first keystroke.",
+    icon: Check,
+    title: "Zero Capital At Risk",
+    body: "You don't need to put your hard-earned savings on the line to participate. By completely removing the financial barrier, Shiriki allows you to join the ecosystem with total peace of mind.",
     color: "text-notion-yellow bg-notion-yellow/10",
-  },
-  {
-    icon: Lock,
-    title: "Secure by design",
-    body: "Granular permissions, SSO, and encryption keep work private.",
-    color: "text-ink bg-ink/5",
-  },
-  {
-    icon: Globe,
-    title: "Publish to the web",
-    body: "Turn any page into a public site or shareable link in one click.",
-    color: "text-notion-red bg-notion-red/10",
   },
 ];
 
 export default function FeatureGrid() {
   return (
-    <section id="solutions" className="border-t border-line bg-cream/40">
-      <div className="mx-auto max-w-content px-5 py-20 md:px-8 md:py-28">
+    <section id="about" className="border-t border-line bg-cream/40">
+      <div className="mx-auto max-w-content px-5 py-12 md:px-8 md:py-16">
         <div className="mx-auto mb-14 max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-            One tool, endless building blocks
+            What is Shiriki?
           </h2>
           <p className="mt-4 text-lg leading-8 text-ink-light">
-            Mix and match to design the workspace your team actually wants.
+            Shiriki is a decentralized, culture-first hybrid protocol born out
+            of a simple truth: crypto needs to belong to real people again.
+            Stripped of complex financial jargon, $SHIRI begins its journey as a
+            pure cultural token with no initial intrinsic value—engineered to
+            spark a massive global movement. As our tribe expands, the protocol
+            evolves, unlocking native real-world utility dictated solely by the
+            scale of our network. The community isn&apos;t here to become exit
+            liquidity for centralized entities; the community is the economic
+            engine.
           </p>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 md:grid-cols-2">
           {cards.map(({ icon: Icon, title, body, color }) => (
             <div key={title} className="block-card group">
               <span

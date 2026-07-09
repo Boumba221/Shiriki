@@ -6,7 +6,7 @@ const stats = [
 
 export default function Testimonial() {
   return (
-    <section className="mx-auto max-w-content px-5 py-20 md:px-8 md:py-28">
+    <section className="mx-auto max-w-content px-5 py-12 md:px-8 md:py-16">
       <figure className="mx-auto max-w-3xl text-center">
         <div className="mb-6 text-4xl">💬</div>
         <blockquote className="text-balance text-2xl font-medium leading-snug tracking-tight text-ink sm:text-3xl">

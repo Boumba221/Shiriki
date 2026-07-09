@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: "class",
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,17 +9,20 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Notion's signature palette
+        // Semantic palette — driven by CSS variables so it flips in dark mode.
+        // Channel form (R G B) keeps Tailwind opacity modifiers (/10, /80) working.
+        page: "rgb(var(--page) / <alpha-value>)", // body background
+        surface: "rgb(var(--surface) / <alpha-value>)", // cards, nav, popovers
         ink: {
-          DEFAULT: "#37352F", // primary text
-          light: "#73726E", // secondary text
-          faint: "#9B9A97", // tertiary / muted
+          DEFAULT: "rgb(var(--ink) / <alpha-value>)", // primary text
+          light: "rgb(var(--ink-light) / <alpha-value>)", // secondary text
+          faint: "rgb(var(--ink-faint) / <alpha-value>)", // tertiary / muted
         },
         cream: {
-          DEFAULT: "#F7F6F3", // warm off-white sections
-          soft: "#FBFBFA",
+          DEFAULT: "rgb(var(--cream) / <alpha-value>)", // tinted sections
+          soft: "rgb(var(--cream-soft) / <alpha-value>)",
         },
-        line: "rgba(55, 53, 47, 0.09)", // hairline borders
+        line: "var(--line)", // hairline borders
         notion: {
           blue: "#2383E2",
           red: "#EB5757",

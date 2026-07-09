@@ -3,7 +3,7 @@ export default function Logo({ className = "" }: { className?: string }) {
     <div className={`flex items-center gap-2 ${className}`}>
       <span
         aria-hidden
-        className="grid h-7 w-7 place-items-center rounded-md bg-ink text-[15px] font-bold leading-none text-white"
+        className="grid h-7 w-7 place-items-center rounded-md bg-ink text-[15px] font-bold leading-none text-page"
       >
         S
       </span>

@@ -1,15 +1,21 @@
 # Shiriki — Landing Page
 
-A **Notion-style** landing page for **Shiriki** (Swahili for _"share / participate"_) — a connected workspace for teams. Built with **Next.js**, **TypeScript**, and **Tailwind CSS**. No backend — this is a fully static marketing site.
+A **Notion-style** landing page for **Shiriki / $SHIRI** — a decentralized, culture-first, community-owned crypto protocol. Built with **Next.js**, **TypeScript**, and **Tailwind CSS**. No backend — a fully static marketing site.
 
 ## Design
 
-Pure Notion aesthetic:
+Pure Notion aesthetic, with a full **light & dark mode**:
 
-- Warm off-white sections (`#F7F6F3`), ink text (`#37352F`), hairline borders
+- Warm off-white / deep dark surfaces, ink text, hairline borders
 - Inter typeface, tight tracking, lots of whitespace
-- "Block" cards, emoji accents, and a slash-command feel
-- A pure HTML/CSS recreation of the Notion editor as the hero mockup (no images)
+- "Block" cards and emoji accents
+- Semantic palette driven by CSS variables (channel-based RGB) so every color flips cleanly between light and dark
+
+## Features
+
+- 🌙 **Dark / light mode** toggle (sun/moon) with `localStorage` persistence, system-preference default, and a no-flash inline script
+- 🌐 **Language switcher** — 15 languages shown in their native script (i18n-ready, display only for now)
+- 📱 Fully responsive, mobile burger menu
 
 ## Getting started
 
@@ -32,24 +38,26 @@ npm run lint    # lint
 
 ```
 app/
-  layout.tsx        # root layout, fonts, metadata
-  page.tsx          # assembles all sections
-  globals.css       # Tailwind + Notion base styles
+  layout.tsx          # root layout, fonts, metadata, no-flash theme script
+  page.tsx            # assembles all sections
+  globals.css         # Tailwind + light/dark CSS variables + base styles
 components/
-  Navbar.tsx        # sticky nav with mobile menu
-  Hero.tsx          # headline + CTA + product mockup
-  AppMockup.tsx     # pure-CSS Notion editor recreation
-  LogoStrip.tsx     # "trusted by" logos
-  Features.tsx      # alternating feature blocks
-  FeatureGrid.tsx   # building-blocks grid
-  Testimonial.tsx   # quote + stats
-  CTA.tsx           # dark call-to-action banner
-  Footer.tsx        # footer links
+  Navbar.tsx          # sticky nav, theme toggle, language switcher, mobile menu
+  Hero.tsx            # headline + CTA
+  FeatureGrid.tsx     # "What is Shiriki?" + benefit cards
+  Tokenomics.tsx      # $SHIRI distribution
+  Roadmap.tsx         # phased roadmap timeline
+  Faq.tsx             # accordion FAQ
+  Testimonial.tsx     # quote + stats
+  CTA.tsx             # dark call-to-action banner
+  Footer.tsx          # footer links
+  ThemeToggle.tsx     # dark/light toggle button
   Logo.tsx, icons.tsx
-tailwind.config.ts  # Notion color palette & tokens
+tailwind.config.ts    # semantic color tokens (CSS-variable driven) + dark mode
 ```
 
 ## Notes
 
-- All links (`Log in`, `Get Shiriki free`, footer, etc.) are placeholders (`#`) since there's no backend yet.
+- All action links (`Get $SHIRI free`, footer, etc.) are placeholders (`#`) since there's no backend yet.
+- The language switcher updates the UI selection only — real translation (i18n) is not wired yet.
 - Everything is responsive and works down to mobile.
